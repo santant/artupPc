@@ -17,3 +17,13 @@ npm run build
 ```
 #类似于这些，请查看router里面的路由
 http://localhost:8081/#/Login
+
+
+#表单验证
+/Login 里面
+
+#路由嵌套
+#table里面
+
+
+
