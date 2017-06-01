@@ -45,7 +45,7 @@
 				<div class="pj_right_flex">
 					<section style="margin-bottom: 60px;"  class="content-container">					
 						<el-col :span="24">
-							<span class="title"><i>首页/</i><i>项目/</i><b>页面一</b></span>					
+							<span class="title"><i>首页/</i><i>项目/</i><b>页面一/页面二</b></span>					
 						</el-col>
 						
 						
