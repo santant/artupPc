@@ -1,6 +1,6 @@
 <template>
 	<div id="table">
-		<div class="title_nav" style="display: block;">
+		<div class="title_nav">
 			<ul>
 				<li><span>首页</span><i class="el-icon-close"></i></li>
 				<li class="activeLi"><span>订单管理</span><i class="el-icon-close"></i></li>
@@ -8,7 +8,7 @@
 			</ul>
 		</div>
 		
-		<el-row  class="toolbar">
+		<el-row :gutter="10" class="toolbar">
 		  <el-form  :inline="true" :model="formInline" class="demo-form-inline">	
 			  <el-col :xs="12" :sm="6" :md="6" :lg="6">
 			  	 <el-form-item :span="6"  label="订单ID">
@@ -44,13 +44,13 @@
 			   <el-col :xs="24" :sm="12" :md="12" :lg="12">
 		   		 <!--活动时间-->
 				  <el-form-item :span="12" label="选择时间">
-				    <el-col :span="10">
+				    <el-col :span="11">
 				      <el-form-item >
 				        <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date1" style="width: 100%;"></el-date-picker>
 				      </el-form-item>
 				    </el-col>
-				    <el-col :span="2">-></el-col>
-				    <el-col :span="10">
+				    <el-col class="line" :span="2">---></el-col>
+				    <el-col :span="11">
 				      <el-form-item >
 				        <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date2" style="width: 100%;"></el-date-picker>
 				      </el-form-item>
@@ -65,20 +65,59 @@
 				    </el-select>
 			 	 </el-form-item>
 			   </el-col>			  
-		 </el-form>
-		  <el-col :sm="6" :lg="2">
-		  	<el-button type="primary">查询<i class="el-icon-search el-icon--right"></i></el-button>
-		  </el-col>	
-		   <el-col  :sm="6" :lg="2">
-		   	<el-button type="primary">导出<i class="el-icon-upload el-icon--right"></i></el-button>
-		   	</el-col>
-		   <el-col :sm="6" :lg="2">
-		   	<el-button type="primary">清空<i class="el-icon-close el-icon--right"></i></el-button>
-		   </el-col>	
+		 </el-form>	  
 		</el-row>
-
-
-		<div class="el-table el-table--fit el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">		
+		
+		
+		
+		
+		<div class="toolbar el-col el-col-24" style="padding-top:20px;">
+			<el-form  :inline="true" :model="formInline" class="demo-form-inline">
+			  <el-form-item :span="6"  label="订单ID">
+			    <el-input v-model="formInline.user" placeholder="订单ID"></el-input>
+			  </el-form-item>
+			  <el-form-item :span="6" label="订单Code">
+			    <el-input v-model="formInline.code" placeholder="订单Code"></el-input>
+			  </el-form-item>
+			  <el-form-item :span="6"  label="支付状态">
+			    <el-select v-model="formInline.PayStatus" placeholder="支付状态">
+			      <el-option label="区域一" value="shanghai"></el-option>
+			      <el-option label="区域二" value="beijing"></el-option>
+			    </el-select>
+			  </el-form-item>
+			   <el-form-item :span="6" label="审核状态">
+			    <el-select v-model="formInline.status" placeholder="审核状态">
+			      <el-option label="区域一" value="shanghai"></el-option>
+			      <el-option label="区域二" value="beijing"></el-option>
+			    </el-select>
+			  </el-form-item>
+			   <el-form-item :span="6"label="手机号">
+			    <el-input v-model="formInline.phoneNumber" placeholder="手机号"></el-input>
+			  </el-form-item>
+			  <!--活动时间-->
+			  <el-form-item :span="12" label="选择时间">
+			    <el-col :span="11">
+			      <el-form-item >
+			        <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date1" style="width: 100%;"></el-date-picker>
+			      </el-form-item>
+			    </el-col>
+			    <el-col class="line" :span="2">---></el-col>
+			    <el-col :span="11">
+			      <el-form-item >
+			        <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date2" style="width: 100%;"></el-date-picker>
+			      </el-form-item>
+			    </el-col>
+			  </el-form-item>
+			 <el-form-item label="订单类型">
+			    <el-select v-model="formInline.order" placeholder="订单类型">
+			      <el-option label="区域一" value="shanghai"></el-option>
+			      <el-option label="区域二" value="beijing"></el-option>
+			    </el-select>
+			  </el-form-item>
+			</el-form>
+		</div>
+		<div class="el-table el-table--fit el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">
+			
 			<div class="el-table__header-wrapper">
 				<table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 100%;">
 					<colgroup>

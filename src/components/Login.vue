@@ -49,6 +49,8 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {//验证之后的处理
           this.$message('这是一条消息提示');
+          
+          console.log(this.ruleForm)
             alert('submit!');
           } else {//出错的处理
             console.log('error submit!!');
