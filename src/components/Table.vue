@@ -66,137 +66,100 @@
 			 	 </el-form-item>
 			   </el-col>			  
 		 </el-form>
-		  <el-col :sm="6" :lg="2">
+		  <el-col :sm="3" :lg="2">
 		  	<el-button type="primary">查询<i class="el-icon-search el-icon--right"></i></el-button>
 		  </el-col>	
-		   <el-col  :sm="6" :lg="2">
+		   <el-col  :sm="3" :lg="2">
 		   	<el-button type="primary">导出<i class="el-icon-upload el-icon--right"></i></el-button>
 		   	</el-col>
-		   <el-col :sm="6" :lg="2">
+		   <el-col :sm="3" :lg="2">
 		   	<el-button type="primary">清空<i class="el-icon-close el-icon--right"></i></el-button>
 		   </el-col>	
 		</el-row>
 
 
 		<div class="el-table el-table--fit el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">		
-			<div class="el-table__header-wrapper">
-				<table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 100%;">
-					<colgroup>
-						<col name="el-table_1_column_1" width="55">
-						<col name="el-table_1_column_2" width="60">
-						<col name="el-table_1_column_3" width="120">
-						<col name="el-table_1_column_4" width="100">
-						<col name="el-table_1_column_5" width="100">
-						<col name="el-table_1_column_6" width="120">
-						<col name="el-table_1_column_7" width="334">
-						<col name="el-table_1_column_8" width="150">
-						<col name="gutter" width="">
-					</colgroup>
-					<thead>
-						<tr>
-							<th colspan="1" rowspan="1" class="el-table_1_column_1 el-table-column--selection is-leaf">
-								<div class="cell"><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" class="el-checkbox__original" value=""></span><!----></label></div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_2 is-leaf">
-								<div class="cell">#</div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_3 is-leaf">
-								<div class="cell">姓名<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_4 is-leaf">
-								<div class="cell">性别<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_5 is-leaf">
-								<div class="cell">年龄<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_6 is-leaf">
-								<div class="cell">生日<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_7 is-leaf">
-								<div class="cell">地址<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
-							</th>
-							<th colspan="1" rowspan="1" class="el-table_1_column_8 is-leaf">
-								<div class="cell">操作</div>
-							</th>
-							<th class="gutter" style="width: 0px;"></th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-			<div class="el-table__body-wrapper">
-				<table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 100%;">
-					<colgroup>
-						<col name="el-table_1_column_1" width="55">
-						<col name="el-table_1_column_2" width="60">
-						<col name="el-table_1_column_3" width="120">
-						<col name="el-table_1_column_4" width="100">
-						<col name="el-table_1_column_5" width="100">
-						<col name="el-table_1_column_6" width="120">
-						<col name="el-table_1_column_7" width="334">
-						<col name="el-table_1_column_8" width="150">
-					</colgroup>
-					<tbody>
-						<tr class="">
-							<td class="el-table_1_column_1 el-table-column--selection">
-								<div class="cell"><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" class="el-checkbox__original" value=""></span><!----></label></div>
-							</td>
-							<td class="el-table_1_column_2">
-								<div class="cell">
-									<div>1</div>
-								</div>
-							</td>
-							<td class="el-table_1_column_3">
-								<div class="cell">韩秀兰</div>
-							</td>
-							<td class="el-table_1_column_4">
-								<div class="cell">男</div>
-							</td>
-							<td class="el-table_1_column_5">
-								<div class="cell">42</div>
-							</td>
-							<td class="el-table_1_column_6">
-								<div class="cell">1989-05-20</div>
-							</td>
-							<td class="el-table_1_column_7">
-								<div class="cell">河北省 张家口市 崇礼县</div>
-							</td>
-							<td class="el-table_1_column_8">
-								<div class="cell"><button type="button" class="el-button el-button--default el-button--small"><!----><!----><span>编辑</span></button> <button type="button" class="el-button el-button--danger el-button--small"><!----><!----><span>删除</span></button></div>
-							</td>
-						</tr>
-						<tr class="">
-							<td class="el-table_1_column_1 el-table-column--selection">
-								<div class="cell"><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" class="el-checkbox__original" value=""></span><!----></label></div>
-							</td>
-							<td class="el-table_1_column_2">
-								<div class="cell">
-									<div>2</div>
-								</div>
-							</td>
-							<td class="el-table_1_column_3">
-								<div class="cell">戴军</div>
-							</td>
-							<td class="el-table_1_column_4">
-								<div class="cell">女</div>
-							</td>
-							<td class="el-table_1_column_5">
-								<div class="cell">51</div>
-							</td>
-							<td class="el-table_1_column_6">
-								<div class="cell">1993-08-27</div>
-							</td>
-							<td class="el-table_1_column_7">
-								<div class="cell">台湾 台东县 达仁乡</div>
-							</td>
-							<td class="el-table_1_column_8">
-								<div class="cell"><button type="button" class="el-button el-button--default el-button--small"><!----><!----><span>编辑</span></button> <button type="button" class="el-button el-button--danger el-button--small"><!----><!----><span>删除</span></button></div>
-							</td>
-						</tr>
-						
-					 
-					</tbody>
-				</table>
-			</div>
+			 <el-table
+			    :data="tableData"
+			    border
+			    style="width: 100%">
+			    <el-table-column
+			       fixed
+			      type="index"
+			      label=" "
+			      width="40">
+			    </el-table-column>
+			    <el-table-column
+			       fixed
+			     type="selection"
+			      label=" "
+			      width="40">
+			    </el-table-column>
+			    <el-table-column
+			      fixed
+			      prop="id"
+			      label="订单ID"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="numbers"
+			      label="订单编号"
+			      width="200">
+			    </el-table-column>
+			    <el-table-column
+			      prop="AuditState"
+			      label="审核状态"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="OrderStatus"
+			      label="订单状态"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="times"
+			      label="下单时间"
+			      width="120">
+			    </el-table-column>
+			    <el-table-column
+			      prop="payTimes"
+			      label="付款时间"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="Total"
+			      label="应付总额"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="PaymentMethod"
+			      label="支付方式"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="payStatus"
+			      label="支付状态"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      prop="productType"
+			      label="产品类型"
+			      width="100">
+			    </el-table-column>
+			    <el-table-column
+			      fixed="right"
+			      label="操作"
+			      width="180">
+			      <template scope="scope">
+			        <el-button  type="text" size="small">生成PDF备注</el-button>
+			        <el-button type="text" size="small">物流详情</el-button>
+			        <el-button type="text" size="small">详情</el-button>
+			        <el-button type="text" size="small">取消</el-button>
+			        <el-button type="text" size="small">删除</el-button>
+			      </template>
+			    </el-table-column>
+			</el-table>
+			
 			<div class="toolbar el-col el-col-24">
 				<button disabled="disabled" type="button" class="el-button el-button--danger is-disabled"><span>批量删除</span></button>
 				<!--页码-->
@@ -217,7 +180,7 @@
 <script>
 		 export default {
 		    data() {
-		      return {
+			 return {
 		        formInline: {
 		          user: '',
 		          region: '',
@@ -228,7 +191,57 @@
 		          date1:'',
 		          date2:'',
 		          order:''
-		        }
+		        },
+		        tableData: [{
+		          id: '201620',
+		          numbers: '2016202016202016202',
+		          AuditState: '待审核',
+		          OrderStatus: '未处理',
+		          times:"2017-06-05 14:02:01",
+		          payTimes:"2017-06-05 14:02:01",
+		          PaymentMethod:"微信支付",
+		          payStatus:'已支付',
+		          productType:"海报",
+		          address: '上海市普陀区金沙江路 1518 弄',
+		          Total: 203
+		        },{
+		          id: '201620',
+		          numbers: '2016202016202016202',
+		          AuditState: '待审核',
+		          OrderStatus: '未处理',
+		          times:"2017-06-05 14:02:01",
+		          payTimes:"2017-06-05 14:02:01",
+		          PaymentMethod:"微信支付",
+		          payStatus:'已支付',
+		          productType:"海报",
+		          address: '上海市普陀区金沙江路 1518 弄',
+		          Total: 203
+		        },{
+		          id: '201620',
+		          numbers: '2016202016202016202',
+		          AuditState: '待审核',
+		          OrderStatus: '未处理',
+		          times:"2017-06-05 14:02:01",
+		          payTimes:"2017-06-05 14:02:01",
+		          PaymentMethod:"微信支付",
+		          payStatus:'已支付',
+		          productType:"海报",
+		          address: '上海市普陀区金沙江路 1518 弄',
+		          Total: 203
+		        },{
+		          id: '201620',
+		          numbers: '2016202016202016202',
+		          AuditState: '待审核',
+		          OrderStatus: '未处理',
+		          times:"2017-06-05 14:02:01",
+		          payTimes:"2017-06-05 14:02:01",
+		          PaymentMethod:"微信支付",
+		          payStatus:'已支付',
+		          productType:"海报",
+		          address: '上海市普陀区金沙江路 1518 弄',
+		          Total: 203
+		        }]
+		        
 		      }
 		    },
 		    methods: {
