@@ -119,12 +119,12 @@
 			    <el-table-column
 			      prop="times"
 			      label="下单时间"
-			      width="120">
+			      width="200">
 			    </el-table-column>
 			    <el-table-column
 			      prop="payTimes"
 			      label="付款时间"
-			      width="100">
+			      width="200">
 			    </el-table-column>
 			    <el-table-column
 			      prop="Total"
