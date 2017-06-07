@@ -118,12 +118,20 @@
 			    <el-table-column
 			      prop="times"
 			      label="下单时间"
+<<<<<<< HEAD
 			      width="170">
+=======
+			      width="200">
+>>>>>>> 81cc3e91708b270c0cd4bdc917c1c1a2d1ef3450
 			    </el-table-column>
 			    <el-table-column
 			      prop="payTimes"
 			      label="付款时间"
+<<<<<<< HEAD
 			      width="170">
+=======
+			      width="200">
+>>>>>>> 81cc3e91708b270c0cd4bdc917c1c1a2d1ef3450
 			    </el-table-column>
 			    <el-table-column
 			      prop="Total"
