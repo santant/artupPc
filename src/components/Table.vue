@@ -6,75 +6,74 @@
 				<li class="activeLi"><span>订单管理</span><i class="el-icon-close"></i></li>
 				<li><span>猫的广场舞</span><i class="el-icon-close"></i></li>
 			</ul>
-		</div>
-		
+		</div>		
 		<el-row  class="toolbar">
 		  <el-form  :inline="true" :model="formInline" class="demo-form-inline">	
-			  <el-col :xs="12" :sm="6" :md="6" :lg="6">
+			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
 			  	 <el-form-item :span="6"  label="订单ID">
-				    <el-input v-model="formInline.user" placeholder="订单ID"></el-input>
+				    <el-input size="small" v-model="formInline.user" placeholder="订单ID"></el-input>
 				  </el-form-item>
-			  </el-col>
-			  <el-col :xs="12" :sm="6" :md="6" :lg="6">
+			  <!--</el-col>-->
+			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
 			  	 <el-form-item :span="6" label="订单Code">
-			    <el-input v-model="formInline.code" placeholder="订单Code"></el-input>
+			    <el-input size="small" v-model="formInline.code" placeholder="订单Code"></el-input>
 			  </el-form-item>
-			  </el-col>
-			  <el-col :xs="12" :sm="6" :md="6" :lg="6">
-			  	 <el-form-item :span="6"  label="支付状态">
-			    <el-select v-model="formInline.PayStatus" placeholder="支付状态">
+			  <!--</el-col>-->
+			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
+			 <el-form-item :span="6"  label="支付状态">
+			    <el-select size="small" v-model="formInline.PayStatus" placeholder="支付状态">
 			      <el-option label="区域一" value="shanghai"></el-option>
 			      <el-option label="区域二" value="beijing"></el-option>
 			    </el-select>
 			  </el-form-item>
-			  </el-col>
-			  <el-col :xs="12" :sm="6" :md="6" :lg="6">
+			  <!--</el-col>-->
+			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
 				  <el-form-item :span="6" label="审核状态">
-				    <el-select v-model="formInline.status" placeholder="审核状态">
+				    <el-select size="small" v-model="formInline.status" placeholder="审核状态">
 				      <el-option label="区域一" value="shanghai"></el-option>
 				      <el-option label="区域二" value="beijing"></el-option>
 				    </el-select>
 				  </el-form-item>
-			  </el-col>
-			   <el-col :xs="12" :sm="6" :md="6" :lg="6">
+			  <!--</el-col>-->
+			   <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
 			   	  <el-form-item :span="6"label="手机号">
-				    <el-input v-model="formInline.phoneNumber" placeholder="手机号"></el-input>
+				    <el-input size="small" v-model="formInline.phoneNumber" placeholder="手机号"></el-input>
 				  </el-form-item>
-			   </el-col>
-			   <el-col :xs="24" :sm="12" :md="12" :lg="12">
+			   <!--</el-col>-->
+			   <!--<el-col :xs="24" :sm="12" :md="12" :lg="12">-->
 		   		 <!--活动时间-->
 				  <el-form-item :span="12" label="选择时间">
 				    <el-col :span="10">
-				      <el-form-item >
-				        <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date1" style="width: 100%;"></el-date-picker>
+				      <el-form-item>
+				        <el-date-picker size="small" type="date" placeholder="选择日期" v-model="formInline.date1" style="width: 100%;"></el-date-picker>
 				      </el-form-item>
 				    </el-col>
-				    <el-col :span="2">-></el-col>
+				    <el-col :span="2">-</el-col>
 				    <el-col :span="10">
 				      <el-form-item >
-				        <el-date-picker type="date" placeholder="选择日期" v-model="formInline.date2" style="width: 100%;"></el-date-picker>
+				        <el-date-picker size="small" type="date" placeholder="选择日期" v-model="formInline.date2" style="width: 100%;"></el-date-picker>
 				      </el-form-item>
 				    </el-col>
 				  </el-form-item>
-			   	</el-col>
-			   <el-col :xs="12" :sm="6" :md="6" :lg="6">
+			   	<!--</el-col>-->
+			   <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
 			   	  <el-form-item label="订单类型">
-				    <el-select v-model="formInline.order" placeholder="订单类型">
+				    <el-select size="small" v-model="formInline.order" placeholder="订单类型">
 				      <el-option label="区域一" value="shanghai"></el-option>
 				      <el-option label="区域二" value="beijing"></el-option>
 				    </el-select>
 			 	 </el-form-item>
-			   </el-col>			  
+			   <!--</el-col>-->			  
 		 </el-form>
-		  <el-col :sm="3" :lg="2">
-		  	<el-button type="primary">查询<i class="el-icon-search el-icon--right"></i></el-button>
-		  </el-col>	
-		   <el-col  :sm="3" :lg="2">
-		   	<el-button type="primary">导出<i class="el-icon-upload el-icon--right"></i></el-button>
-		   	</el-col>
-		   <el-col :sm="3" :lg="2">
-		   	<el-button type="primary">清空<i class="el-icon-close el-icon--right"></i></el-button>
-		   </el-col>	
+		  <!--<el-col :sm="2" :lg="2">-->
+		  	<el-button type="primary"  size="small">查询<i class="el-icon-search el-icon--right"></i></el-button>
+		  <!--</el-col>-->	
+		   <!--<el-col  :sm="2" :lg="2">-->
+		   	<el-button type="primary"  size="small">导出<i class="el-icon-upload el-icon--right"></i></el-button>
+		   	<!--</el-col>-->
+		   <!--<el-col :sm="2" :lg="2">-->
+		   	<el-button type="primary"  size="small">清空<i class="el-icon-close el-icon--right"></i></el-button>
+<!--		   </el-col>	-->
 		</el-row>
 
 
@@ -119,12 +118,12 @@
 			    <el-table-column
 			      prop="times"
 			      label="下单时间"
-			      width="120">
+			      width="170">
 			    </el-table-column>
 			    <el-table-column
 			      prop="payTimes"
 			      label="付款时间"
-			      width="100">
+			      width="170">
 			    </el-table-column>
 			    <el-table-column
 			      prop="Total"
@@ -151,7 +150,7 @@
 			      label="操作"
 			      width="180">
 			      <template scope="scope">
-			        <el-button  type="text" size="small">生成PDF备注</el-button>
+			        <!--<el-button  type="text" size="small">生成PDF备注</el-button>-->
 			        <el-button type="text" size="small">物流详情</el-button>
 			        <el-button type="text" size="small">详情</el-button>
 			        <el-button type="text" size="small">取消</el-button>
@@ -192,7 +191,8 @@
 		          date2:'',
 		          order:''
 		        },
-		        tableData: [{
+		        tableData: [
+		        {
 		          id: '201620',
 		          numbers: '2016202016202016202',
 		          AuditState: '待审核',
