@@ -20,20 +20,22 @@
 			  </el-form-item>
 			  <!--</el-col>-->
 			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
-			 <el-form-item :span="6"  label="支付状态">
-			    <el-select size="small" v-model="formInline.PayStatus" placeholder="支付状态">
-			      <el-option label="区域一" value="shanghai"></el-option>
-			      <el-option label="区域二" value="beijing"></el-option>
-			    </el-select>
-			  </el-form-item>
-			  <!--</el-col>-->
-			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
-				  <el-form-item :span="6" label="审核状态">
-				    <el-select size="small" v-model="formInline.status" placeholder="审核状态">
-				      <el-option label="区域一" value="shanghai"></el-option>
-				      <el-option label="区域二" value="beijing"></el-option>
+			
+			     <el-form-item :span="6" label="支付状态">
+				    <el-select size="small" v-model="formInline.status" placeholder="支付状态">
+				      <el-option label="支付状态" value="shangha1i"></el-option>
+				      <el-option label="区域二" value="beijing2"></el-option>
 				    </el-select>
 				  </el-form-item>
+			  <!--</el-col>-->
+			  <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
+				
+				  <el-form-item label="审核状态">
+				    <el-select size="small" v-model="formInline.status" placeholder="审核状态">
+				      <el-option label="审核状态" value="shanghai"></el-option>
+				      <el-option label="审核状态" value="beijing"></el-option>
+				    </el-select>
+			 	 </el-form-item>
 			  <!--</el-col>-->
 			   <!--<el-col :xs="12" :sm="6" :md="6" :lg="6">-->
 			   	  <el-form-item :span="6"label="手机号">
@@ -81,7 +83,7 @@
 			 <el-table
 			    :data="tableData"
 			    border
-			    style="width: 100%">
+			    style="width: 100%"  @select='selectSign' @select-all="selectAll" >
 			    <el-table-column
 			       fixed
 			      type="index"
@@ -94,6 +96,7 @@
 			      label=" "
 			      width="40">
 			    </el-table-column>
+			    
 			    <el-table-column
 			      fixed
 			      prop="id"
@@ -153,7 +156,7 @@
 			      width="180">
 			      <template scope="scope">
 			        <!--<el-button  type="text" size="small">生成PDF备注</el-button>-->
-			        <el-button type="text" size="small">物流详情</el-button>
+			        <el-button type="text" size="small" >物流详情</el-button>
 			        <el-button type="text" size="small">详情</el-button>
 			        <el-button type="text" size="small">取消</el-button>
 			        <el-button type="text" size="small">删除</el-button>
@@ -162,18 +165,18 @@
 			</el-table>
 			
 			<div class="toolbar el-col el-col-24">
-				<button disabled="disabled" type="button" class="el-button el-button--danger is-disabled"><span>批量删除</span></button>
+
+			<button  type="button" :class="checkDelect ? 'el-button el-button--danger' : 'el-button el-button--danger is-disabled' "><span>批量删除</span></button>
 				<!--页码-->
 				<div class="el-pagination" style="float: right;">
-					<div class="block">
-					  <el-pagination
+
+					  <el-pagination @current-change="currentPage"
 					    layout="prev, pager, next"
-					    :total="100">
+					    :total="total" >
 					  </el-pagination>
-					</div>
+
 				</div>
 			</div>
-
 		</div>
 	</div>
 </template>
@@ -182,6 +185,8 @@
 		 export default {
 		    data() {
 			 return {
+			 	//判断批量删除图标是否启用标记
+			 	checkDelect:false,		 
 		        formInline: {
 		          user: '',
 		          region: '',
@@ -193,6 +198,7 @@
 		          date2:'',
 		          order:''
 		        },
+		        total:400, //总的分页数量
 		        tableData: [
 		        {
 		          id: '201620',
@@ -247,9 +253,21 @@
 		      }
 		    },
 		    methods: {
-		      onSubmit() {
-		        console.log('submit!');
-		      }
+		    	
+		    	   //选择复选框的时候触发事件
+				selectSign(selection){
+					selection.length>0 ?this.checkDelect = true:this.checkDelect = false;
+				},
+				//全选的时候触发
+				selectAll(selection){
+					selection.length>0 ?this.checkDelect = true:this.checkDelect = false;
+				},			
+				//分页页面改变的时候触发
+				currentPage(currentPage){
+					console.log(currentPage)
+				}
+				
+
 		    }
 		  }
 	
