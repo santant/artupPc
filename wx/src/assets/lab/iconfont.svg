@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Thu Jun 15 11:19:14 2017
+Created by FontForge 20120731 at Tue Jun 20 15:20:58 2017
  By admin
 </metadata>
 <defs>
@@ -62,6 +62,9 @@ t-21.5 123q0 106 75.5 182t182 76zM496 53l16 -15l16 15q14 14 35 36t70 82.5t86 120
     <glyph glyph-name="delete-copy" unicode="&#xe68a;" 
 d="M781 596l2 -556q0 -45 -44 -45l-446 1q-45 0 -45 43v557h-69v-558q0 -43 32.5 -74.5t79.5 -31.5h445q47 0 79.5 31.5t32.5 74.5v558h-67zM342 477v-395q0 -4 1 -8q30 0 61 1q1 3 1 7v395h-63v0zM621 475v-393q0 -3 1 -6h62q1 3 1 6v393h-64v0zM904 703h-188v66
 q2 67 -91 67h-223q-90 0 -90 -65v-68h-192v-65h784v65zM653 703h-279v46q0 12 7.5 20t19.5 8l223 -1q11 0 20 -7.5t9 -18.5v-47zM484 475v-393v-6h62v6v393h-62v0z" />
+    <glyph glyph-name="xuanzhong" unicode="&#xe639;" horiz-adv-x="1025" 
+d="M512 831q-91 0 -174 -35.5t-143 -95t-95.5 -142.5t-35.5 -174t35.5 -174t95.5 -143t143 -95.5t174 -35.5t174 35.5t143 95.5t95.5 143t35.5 174t-35.5 174t-95.5 142.5t-143 95t-174 35.5zM524 230l-72 -70l-71 70v0l-167 165l71 70l167 -164l287 282l71 -71l-286 -282v0
+z" />
     <glyph glyph-name="gou" unicode="&#xe672;" 
 d="M379 51l-353 353l71 75l282 -282l548 545l71 -71z" />
     <glyph glyph-name="jinhuodan" unicode="&#xe609;" 
