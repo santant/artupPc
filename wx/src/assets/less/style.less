@@ -1,0 +1,393 @@
+//公共的
+body,html{
+    width: 100%;
+    height: 100%;
+}
+h1, h2 {
+  font-weight: normal;
+}
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a {text-decoration: none;}
+#app {
+     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;                
+}   
+/*切换路由的动画*/
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .3s ease;
+}
+
+/*.fade-enter,*/
+.fade-leave-active {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.fade-enter{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
+//公共的css
+body .mint-header{
+    height: 1.8rem;
+    overflow: hidden;
+    background: #333;
+}
+//绝对剧中
+.positionBs{
+    position: absolute;left: 0;right: 0;bottom: 0;top: 0;margin: auto auto;
+}
+
+
+//user 用户列表
+#user{
+    background: url(../img/user.jpg) no-repeat #2a2a2a 0 1.75rem;
+    background-size: 100%;
+    height: 100%;
+    
+    .telePhone{
+        height: 4.78125rem;
+        line-height: 4.78125rem;
+        font-size: 0.78125rem;
+        color: #fff;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        display: block;
+    }
+    .userList{
+        width: 100%;
+        overflow: hidden;
+        padding-top: 3.26rem;
+        >li{
+//          flex: 1;
+            width: 50%;
+            height: 7.225rem;
+            float: left;
+            
+            >a{
+                color: #fff;
+            }
+            i{
+                display: block;
+                height: 2.71875rem;
+                text-align: center;
+                color: #fff;
+                font-size: 1.71875rem;
+                line-height: 1.71817rem;
+                margin-top: 1.15rem;
+            }
+            p{
+                font-size: 0.78125rem;
+                color: #fff;
+                line-height: 1.875rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+//cart 购物车
+#cart{
+    background: #f3f3f3;
+    height: 100%;
+    .cartList{
+         
+        >li{
+           height: 5.65625rem; 
+           margin-bottom: 0.25rem;
+           overflow: hidden;background: #fff;
+           >div{float: left;}
+           .div_select{
+               width:2.3125rem;
+               height: 100%;
+               position: relative;
+               >b{
+                   .positionBs;
+                   width: 0.875rem;
+                   height: 0.875rem;
+                   display: block;
+                   border: 1px solid  #999;
+                   border-radius: 50%;
+                   
+                   >i{
+                       width: 0.875rem;
+                        height: 0.875rem; 
+                        color: #fff;
+                        font-size:0.75rem;
+                        text-indent: 0.05rem;  
+                        position: absolute;
+                        left: 0;top: 0;border-radius: 50%;
+                   }
+               }
+               .activeSelect{
+                   width: 0.875rem;
+                   height: 0.875rem;
+                   background:  #4ecd34;
+                   border: 1px solid  #4ecd34;
+               }
+           }
+           .div_comenter{
+               width: 12.875rem;
+               height: 100%;
+               .img_cart{
+                   width: 4.25rem;
+                   height: 4.25rem;
+                   border: 1px solid #e4e4e4;
+                   border-radius: 5px;
+                   margin-top: 0.625rem;
+                   position: relative;
+                   float: left;
+                   >img{
+                       .positionBs;
+                       max-width: 100%;
+                       max-height: 100%;
+                   }
+               }
+               .img_msg{
+                   width: 7.75rem;
+                   height: 100%;
+                   float: right;
+                   
+                   >li{
+                       font-size: 0.6875rem;
+                       line-height: 1.075rem;
+                   }
+                   >li:nth-child(1){  line-height: 1.375rem;padding-top: 0.5rem;}
+                   >li:nth-child(2){}
+                   >li:nth-child(3){color: #999999;font-size: 0.5625rem;}
+                   >li:nth-child(4){color: #f84845;font-size: 0.75rem;}
+               }
+           }
+           .div_number{
+               width: 4.0625rem;
+               height: 100%;  
+               
+               >ol{
+                   border: 1px solid #e4e4e4;
+                   box-sizing: border-box;
+                   border-radius: 4px;
+                   overflow: hidden;
+                   margin-top: 3.5875rem;
+                   >li{
+                       width: 1.25rem;
+                       height: 1.25rem;
+                       float: left;
+                       text-align: center;
+                       font-size: 0.625rem;
+                       line-height: 1.25rem;
+                   }
+                   >li:nth-of-type(2){
+                        border-left: 1px solid #e4e4e4;
+                        border-right: 1px solid #e4e4e4;
+                   }
+               }           
+           }
+        }
+        
+    }
+    
+    //购物车底部
+    .cart_btn{
+        width: 100%;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        position: fixed;
+        bottom: 0;left: 0;
+        font-size: 0.71875rem;
+        background: #000;
+        overflow: hidden;
+        
+        >div{
+            float: left;
+        }
+        //全选
+        .all_select{
+            width: 4.0625rem;
+            position: relative;    
+
+             >b{
+               .positionBs;
+               width: 0.875rem;
+               height: 0.875rem;
+               display: block;
+               border: 1px solid  #999;
+               border-radius: 50%;
+               left: -1.2rem;
+               >i{
+                   width: 0.875rem;
+                    height: 0.875rem; 
+                    color: #fff;
+                    font-size:0.75rem;
+                    text-indent: 0.05rem;  
+                    position: absolute;
+                    left: 0;top: 0;border-radius: 50%;
+               }
+           }
+           >span{
+               position: relative;
+               left: 2.3rem;
+                color: #fff;
+                top: 0.1rem;
+           }
+           .activeSelect{
+               width: 0.875rem;
+               height: 0.875rem;
+               background:  #4ecd34;
+               border: 1px solid  #4ecd34;
+           }
+        }
+        //价格
+        .price{
+            width: 5.5625rem;
+            height: 100%;
+            float: left;
+            padding-left: 4.4375rem;
+            color: #fff;     
+            >span{
+                color: #f84845;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                padding-left: 0.2rem;
+                >b{
+                    font-weight: 400;
+                    font-size: 0.6rem;
+                    padding-right: 0.1rem;
+                }
+            }
+        }
+        //结算
+        .crectOrder{
+            width: 4.4375rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            border:2px solid #fff;
+            float: left;
+            box-sizing: border-box;
+            font-size: 0.71875rem;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            text-align: center;
+            margin-top: 0.5175rem;
+            margin-left: 0.45rem;
+        }
+    } 
+}
+
+//bbs-select 宝宝书选择
+#bbs-select{
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    .bbsImg{
+        width: 100%;
+        position: relative;
+        height: 19.9375rem;
+        >img{
+            max-height: 100%;
+            max-width: 100%;
+            .positionBs;
+        }
+    }
+    
+    //选择
+    .slect_dl{
+        padding: 0 1.25rem;
+        height: 4.1875rem;
+        border: 1px solid #f5f5f5;
+        background: #fff;
+        >dt{
+            line-height: 2.23125rem;
+            height: 2.03125rem;
+            font-size: 0.6875rem;
+            color: #666;            
+        }
+        >dd{
+                width: 100%;
+                height: 100%;
+                .dd_slect{
+                    width: 4rem;
+                    height: 1.3125rem;
+                    line-height: 1.3125rem;
+                    margin-right:0.463rem;
+                    border: 1px solid #ededed;
+                    box-sizing: border-box;float: left;
+                    margin-bottom: 0.3rem;
+                    overflow: hidden;
+                    position: relative;
+                    font-size: 0.625rem;
+                    text-align: center;
+                    >b{
+                        display: inline-block;
+                        width: 0.4375rem;
+                        height: 0.4375rem;
+                        border: 1px solid #efefef;
+                        margin-right: 0.2rem;
+                        background: #4170e9;
+                    }
+                }
+                 .dd_slectWidth{width: 5.6875rem !important;}
+                 .dd_slect:nth-of-type(4n+4){
+                     margin-right: 0;
+                 }
+                 .dd_active{
+                      border: 1px solid #5c5c5c !important;
+                 }
+            }
+    }
+    
+    
+     //选择的底部
+    .cart_btn{
+        width: 100%;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        position: fixed;
+        bottom: 0;left: 0;
+        font-size: 0.71875rem;
+        background: #000;
+        overflow: hidden;
+         padding: 0 0.6875rem;
+        >div{
+            float: left;
+        }
+        //全选
+
+        //价格
+        .price{
+            width: 5.5625rem;
+            height: 100%;
+            float: left;
+           
+            color: #fff;     
+            >span{
+                color: #f84845;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                padding-left: 0.2rem;
+                >b{
+                    font-weight: 400;
+                    font-size: 0.6rem;
+                    padding-right: 0.1rem;
+                }
+            }
+        }
+        //结算
+        .crectOrder{
+            width: 4.4375rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            box-sizing: border-box;
+            font-size: 0.71875rem;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            text-align: right;
+            margin-top: 0.5175rem;
+            float: right;
+            margin-right:  1.2rem;
+        }
+    }
+}
