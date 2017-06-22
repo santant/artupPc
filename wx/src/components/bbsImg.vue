@@ -47,8 +47,7 @@
 				<li v-for="(item,index) in typeHtml">
 					<div class="bs">
 						<div class="bstp bstpfm">
-							<!--@click="fnss($event)"-->
-							<div   v-tap="{methods : ActionsheetIn,index : index}"  v-html="item" class="bsLeft imgBox">
+							<div v-html="item" class="bsLeft imgBox">
 							</div>
 							  </div>
 						<div class="bbsBtn">
@@ -90,12 +89,12 @@
 		
 		<!-- 弹出框选上传方式 -->
 		<mt-popup class="fileUpload" style="position;relative;"
-		  v-model="sheetVisible"  closeOnClickModal="false"
+		  v-model="sheetVisible"
 		  position="bottom">
 		  <ul>
 		  	<li id="browseButton">从本地添加</li>
 		  	<li v-tap="{methods : slectUpload}">从素材库里导入</li>
-		  	<li @click="sheetVisible=false">取消</li>
+		  	<li @click="sheetVis">取消</li>
 		  </ul>		  
 		</mt-popup> 
 		
@@ -115,6 +114,11 @@
 					 	</li>
 			 		</ul>
 			</div>
+			
+		
+		
+		
+		
 		<!-- 弹出框图片素材库 -->
 		<mt-popup style="position;relative;"
 		  v-model="popupVisible"
@@ -140,7 +144,7 @@
 </template>
 
 <script>
-import { Toast ,Actionsheet,Popup,Indicator} from 'mint-ui';	
+import { Toast ,Actionsheet,Popup} from 'mint-ui';	
 export default{
 	data () {
 	    return {
@@ -153,12 +157,14 @@ export default{
 	      checkBS:true,//更换板式
 	      selectBS:false, //板式选择的模版页面
 	      bbs:{
-	      	index2:0,
-	      	imgUploadNumber:0
+	      	index2:0
 	      } //index
 	    }
   	},
   	methods:{
+//		ActionsheetIn(){ //ActionsheetIn 弹出框显示，选择图片上传			
+//			this.sheetVisible = true;
+//		},
   		slectUpload(){ //素材库倒入的操作
   			this.sheetVisible = false;
   			this.popupVisible = true;
@@ -173,6 +179,9 @@ export default{
 
   			this.selectBS = true;//板式选择模版
   		},
+  		sheetVis(){
+  			this.sheetVisible = false;
+  		},
   		selectMoban(params){ //选择板式
   			var oindex = params.index;
   			this.bbs.index2 = oindex;
@@ -186,36 +195,41 @@ export default{
   			var oIndexs = 'bbs0'+(this.bbs.index2+1)
   			//动态修改模版的板式
   			this.typeHtml[this.bbs.index1] = htmlData[oIndexs];						
-  		},
-  		ActionsheetIn(params){//ActionsheetIn 弹出框显示，选择图片上传		
-  			console.log(params.event.target)
-  			if ($(params.event.target).hasClass("sucaiClass")) { 
-  				//给此节点动态给1个class,方便回显的时候调用,先清空下calss避免bug
-  				$(".OnlyOne").removeClass("OnlyOne");
-  				$(params.event.target).addClass("OnlyOne");
-  				this.sheetVisible = true;
-  				//组装必须字段
-  				this.bbs.page = params.index+1; //第几页需要加1
-  				this.bbs.num = $(params.event.target).attr("nm"); //图片顺序号
-  				this.bbs.styleType = $(params.event.target).attr("type"); //板式
-  				this.bbs.editCnfName = $(params.event.target).attr("editCnfName"); //是宝宝书还是lomok
-  			}
   		}
   	}, 
   	mounted(){
   		
-  		var templateCode = "baobaoshu_170-235_24";//模版编码
-  		var client = 'pc';   //手机，pc，app 设备等
-  		var channel = '本站' //渠道   		
-  		//图片上传时提交的参数 templateCode
-		var extraPostData = {};
   		console.log(htmlData)
   		console.log(document.getElementById('browseButton'))
   		this.typeHtml = typeHtml;
-		var oThis = this;
+
+		console.log(this)
+		var othis = this;
+//		function fns(){}
+		
+		setTimeout(
+			aa,200)
+		
+		function aa(){
+			
+			
+//			var box=$$("#bbsImg .listBox ul li .bs .bstp .imgBox .bbsClass img");   
+//			console.log(box)
+//			box.ons("tap",function(){    
+//			    console.log("你已经长按了");  
+//			    othis.sheetVisible = true;
+//			},box)
+			$(document).on('click',$("#bbsImg .listBox ul li .bs .bstp .imgBox .bbsClass img"),function(){
+				othis.sheetVisible = true;
+			})
+//			$("#bbsImg .listBox ul li .bs .bstp .imgBox .bbsClass img").on('click',function(){
+//				
+//			})
+		}
   		/* 文件上传init */
 		var uploadUrl = 'http://image2.artup.com/artup-build/builder/cors/picture/baobaoshu/upload.do?format=json&sessionId=2141731';
-     	uploadInitializer($, uploadUrl, onUploadComplete);     	
+     	uploadInitializer($, uploadUrl, onUploadComplete);
+     	
 		// //文件上传事件	
      	function onUploadComplete($, r){
      		var browBtn = document.getElementById('browseButton');
@@ -230,40 +244,74 @@ export default{
 					//触发uploadStart
 					r.upload();
 				} else {
+
 					r.cancel();
 				}
+				alert('123')
 			});
 			//开始上传
-			r.on('uploadStart', function(){
-				//组装后端需要的数据
-				extraPostData  = {"templateCode" : templateCode, "userDbId" : "2141731", "client" : client, "channel" : channel,"picPage":oThis.bbs.page,"picNum":oThis.bbs.num,"styleType":oThis.bbs.styleType,"editCnfName":oThis.bbs.editCnfName}	
-				r.opts.query = extraPostData;
-				//打开进度框
-				Indicator.open({text: '图片上传中...',spinnerType: 'fading-circle'});
-				//关闭上弹块儿
-				oThis.sheetVisible = false;				
+			r.on('uploadStart', function() {
+				// r.opts.query = extraPostData;
+				console.log(r.opts.query)
+				console.log('开始上传')
 			});
 			//上传中
 			 r.on('progress', function (e) {
 				//console.log('----------上传中------------------');
 			 	var progress = Number(r.progress());
 			 	var progressWidth = progress.toFixed(2)*100;
-				//进度条显示
-			 	$(".mint-indicator-text").text("上传中..."+parseInt(progressWidth)+'%')
+			 	console.log(progressWidth);
+			 	// $(".loadingMoudel .spinner >span").text('')
+			 	// $(".loadingMoudel .spinner >span").text(parseInt(progressWidth)+"%");
+			 	// //进度条上传显示..
+			 	// if(r.progress() > 0){
+			 	// 	$(".loadingMoudel").css({"display":"block"});
+			 	// }
+			 	// if(r.progress() >= 1){
+			 	// 	$(".loadingMoudel").css({"display":"none"});
+			 	// }
 		    });
-			//上传成功
-			r.on('fileSuccess', function(file, message){
-				var responseText = $.parseJSON(message);				
-				$(".OnlyOne").prev(".myImgBox").show().find("img").attr("src",responseText.thumbnailUrl);
-				//让图片剧中裁切
-				dragThumb($(".OnlyOne").prev(".myImgBox").find("img"),$(".OnlyOne").prev(".myImgBox"));
-				console.log(dragThumb)
-				console.log(responseText)
-				//关闭弹出框
-				Indicator.close();
-				$(".OnlyOne").remove();
-			});
-        }
+
+     	}
+
+ 	
+ 	// 		//开始上传
+		// 	r.on('uploadStart', function() {
+		// 		r.opts.query = extraPostData;
+				
+		// 		$(".loadingMoudel").css({"display":"block"});
+		// 	});
+		// 	r.on('filesAdded', function(array) {
+		// 		if(array.length > 1){
+		// 			alert('只能上传一张图片');
+		// 			return;
+		// 		}
+		// 		var ok = validateUploadFiles($, array);
+		// 		if (ok) {
+		// 			r.upload();
+		// 		} else {
+		// 			r.cancel();
+		// 		}
+		// 	});
+		// 	//上传的进度
+		// 	 r.on('progress', function (e) {
+		// 		//console.log('----------上传中------------------');
+		// 	 	var progress = Number(r.progress());
+		// 	 	var progressWidth = progress.toFixed(2)*100;
+		// 	 	//console.log(progressWidth);
+		// 	 	$(".loadingMoudel .spinner >span").text('')
+		// 	 	$(".loadingMoudel .spinner >span").text(parseInt(progressWidth)+"%");
+		// 	 	//进度条上传显示..
+		// 	 	if(r.progress() > 0){
+		// 	 		$(".loadingMoudel").css({"display":"block"});
+		// 	 	}
+		// 	 	if(r.progress() >= 1){
+		// 	 		$(".loadingMoudel").css({"display":"none"});
+		// 	 	}
+		//     });
+			
+
+
   	}
 }
 </script>

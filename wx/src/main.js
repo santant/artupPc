@@ -14,7 +14,7 @@ import 'mint-ui/lib/style.css'
 //import YDUI from 'vue-ydui'
 import routerConfig from './router.config.js'
 import App from './App.vue'
-
+//移动端tap事件
 import vueTap from 'v-tap';
 
 console.log(vueTap)

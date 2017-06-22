@@ -407,6 +407,9 @@ body .mint-header{
       width: 50%;
       float: left;
     }
+    .listBox ul li:last-of-type{
+        margin-bottom: 2.9rem;
+    }
     .listBox ul li .bs{
       width: 100%;
       height: 15rem;
@@ -451,9 +454,9 @@ body .mint-header{
       width: 100%;
       height: 100%;
     }
-    .listBox ul li .bs .bstp .imgBox .bbsClass img{
-      width: 2.5rem;
-      height: 2.5rem;
+    .listBox ul li .bs .bstp .imgBox .bbsClass >img{
+      width: 32px;
+      height: 32px;
       position: absolute;
       top: 0;
       left: 0;
@@ -482,9 +485,19 @@ body .mint-header{
       bottom: 0;
       margin: auto auto;
       font-weight: 600;
-      display: none;
+//    display: none;
     }
-
+    .listBox ul li .bs .bstp .imgBox .bbsClass .myImgBox >img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto auto;
+          max-height: 100%;
+          max-width: 100%;
+    }
+    
 
     .listBox ul li .bs .bstp .imgBox .marginAuto{
       position: absolute;
@@ -497,18 +510,18 @@ body .mint-header{
 
     .listBox ul li .bs .bstp .imgBox  .textarea{
       width: 7.34375rem;
-      height: 0.1875rem;
+      height: 0.2875rem;
       border: 1px solid #d8d8d8;
-      font-size: 0.1875rem;
+      font-size: 0.3875rem;
       margin-left: 0.46875rem;
       position: absolute;
       bottom: 0.2rem;
-      line-height: 0.1875rem;
+      line-height: 0.3875rem;
       overflow:hidden;
     }
     .listBox ul li .bs .bstp .imgBox  .textarea >p{
       font-size:0.4rem; width: 7.34375rem;
-      height: 0.1875rem;
+      height: 0.3875rem;
       // transform: scale(0.4);
       text-align:left;
     }
@@ -728,7 +741,96 @@ body .mint-header{
       }
     }
   }
+    
+     //选择的底部
+    .cart_btn{
+        width: 100%;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        position: fixed;
+        bottom: 0;left: 0;
+        font-size: 0.71875rem;
+        background: #000;
+        overflow: hidden;
+         padding: 0 0.6875rem;
+        >div{
+            float: left;
+        }
+        //全选
 
+        //价格
+        .price{
+            width: 5.5625rem;
+            height: 100%;
+            float: left;
+           
+            color: #fff;     
+            >span{
+                color: #f84845;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                padding-left: 0.2rem;
+                >b{
+                    font-weight: 400;
+                    font-size: 0.6rem;
+                    padding-right: 0.1rem;
+                }
+            }
+        }
+        //结算
+        .crectOrder{
+            width: 4.4375rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            box-sizing: border-box;
+            font-size: 0.71875rem;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            text-align: right;
+            margin-top: 0.5175rem;
+            float: right;
+            margin-right:  1.2rem;
+        }
+    } 
+    
+}
+
+//切换板式
+.box_checkBS{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+    top: 0;left: 0; 
+   .checkBS{
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background: #ccc;
+
+//      top: 0;left: 0;
+        >li{
+            width: 50%;
+            margin: 1rem auto;
+            border: 1px solid #fff;
+            
+            >img{
+                width: 100%;
+                display: block;
+            }
+        }
+//      >li:nth-of-type(1){
+//           border: 1px solid #333;
+//      }
+        .liactive{
+                border: 1px solid #333;
+        }
+}
+ 
+ 
+ 
+ 
 }
 
 

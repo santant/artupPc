@@ -49,7 +49,6 @@ export default{
 		},
 		{
 			path:'/BbsImg', component:BbsImg //宝宝书图片上传
-		}
-		
+		}		
 	]
 }

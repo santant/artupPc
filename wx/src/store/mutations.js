@@ -8,7 +8,8 @@ import { Toast } from 'mint-ui';
 
 const state = {
   count: 20,
-  test2:'1'
+  test2:'1',
+  BBS:{}  // 宝宝书
 };
 const mutations = {
 	[types.ADD](state) {
