@@ -12,22 +12,27 @@
 
 /*定义八个板式模板*/
 var htmlData={
-	bbs01:'<div bsdata = "1" class="bbs01 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"  type="1" editCnfName="baobaoshu_170-235_24_single"  @click="ActionsheetIn"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="textarea"><p></p></div>',
-	bbs02:'<div bsdata = "2" class="bbs02 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"  type="2" editCnfName="baobaoshu_170-235_24_single"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="textarea"><p></p></div>',
-	bbs03:'<div bsdata = "3" class="bbs03 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1" type="3" editCnfName="baobaoshu_170-235_24_single"   src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div>',
-	bbs04:'<div bsdata = "4" class="bbs04 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1" type="4"  editCnfName="baobaoshu_170-235_24_single"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="textarea"><p></p></div>',
-	bbs05:'<div bsdata = "5" class="allBbsClass"><div class="bbs05 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1" type="5" editCnfName="baobaoshu_170-235_24_single"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs05 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="2" type="5" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div>',
-	bbs06:'<div bsdata = "6" class="allBbsClass"><div class="bbs06 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"  type="6" editCnfName="baobaoshu_170-235_24_single"   src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs06 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="2"  type="6"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div><div class="textarea"><p></p></div>',
-	bbs07:'<div bsdata = "7" class="allBbsClass"><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"   type="7" editCnfName="baobaoshu_170-235_24_single"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="2" type="7" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="3" type="7" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img  nm="4"  type="8" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div>',
-	bbs08:'<div bsdata = "8" class="allBbsClass"><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"  type="8" editCnfName="baobaoshu_170-235_24_single"  src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="2" type="8" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="3" type="8" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="4" type="8" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div><div class="textarea"><p></p></div>',
-	bbs09:'<div class="bbs01 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"  type="1" editCnfName="baobaoshu_lomo" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div>',
-	bbs10:'<div class="bbs02 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span>编辑</span><a></a></div><img nm="1"  type="2" editCnfName="baobaoshu_lomo" src="../../src/assets/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div>',			
+	bbs01:'<div bsdata = "1" class="bbs01 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"  type="1" editCnfName="baobaoshu_170-235_24_single"  @click="ActionsheetIn"  src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="textarea"><p nm="1" type="1" editCnfName="baobaoshu_170-235_24_single"  class="classP"></p></div>',
+	bbs02:'<div bsdata = "2" class="bbs02 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"  type="2" editCnfName="baobaoshu_170-235_24_single"  src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="textarea"><p nm="1" type="2" editCnfName="baobaoshu_170-235_24_single" class="classP"></p></div>',
+	bbs03:'<div bsdata = "3" class="bbs03 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1" type="3" editCnfName="baobaoshu_170-235_24_single"   src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div>',
+	bbs04:'<div bsdata = "4" class="bbs04 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1" type="4"  editCnfName="baobaoshu_170-235_24_single"  src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="textarea"><p nm="1"  type="4" editCnfName="baobaoshu_170-235_24_single"  class="classP"></p></div>',
+	bbs05:'<div bsdata = "5" class="allBbsClass"><div class="bbs05 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1" type="5" editCnfName="baobaoshu_170-235_24_single"  src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs05 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="2" type="5" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg" editCnfName="baobaoshu_170-235_24_single" class="sucaiClass" alt="" /></div></div>',
+	bbs06:'<div bsdata = "6" class="allBbsClass"><div class="bbs06 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"  type="6" editCnfName="baobaoshu_170-235_24_single"   src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs06 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="2"  type="6" editCnfName="baobaoshu_170-235_24_single" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div><div class="textarea"><p nm="1" type="6" editCnfName="baobaoshu_170-235_24_single"  class="classP"></p></div>',
+	bbs07:'<div bsdata = "7" class="allBbsClass"><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"   type="7" editCnfName="baobaoshu_170-235_24_single"  src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="2" type="7" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="3" type="7" editCnfName="baobaoshu_170-235_24_single" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs07 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img  nm="4"  type="8" editCnfName="baobaoshu_170-235_24_single" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div>',
+	bbs08:'<div bsdata = "8" class="allBbsClass"><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"  type="8" editCnfName="baobaoshu_170-235_24_single"  src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="2" type="8" editCnfName="baobaoshu_170-235_24_single" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="3" type="8" editCnfName="baobaoshu_170-235_24_single" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div><div class="bbs08 bbsClass"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="4" type="8" editCnfName="baobaoshu_170-235_24_single" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div></div><div class="textarea"><p nm="1" type="8" editCnfName="baobaoshu_170-235_24_single" class="classP"></p></div>',
+	bbs09:'<div class="bbs01 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"  type="1" editCnfName="baobaoshu_lomo" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div>',
+	bbs10:'<div class="bbs02 bbsClass marginAuto"><div class="myImgBox"><img src="" alt="" /><span class="editImg">编辑</span><a></a></div><img nm="1"  type="2" editCnfName="baobaoshu_lomo" src="http://image2.artup.com/resources/static/img/p_sucai_02.jpg"  class="sucaiClass" alt="" /></div>',			
 };
 
 /*板式默认的格式*/
 var typeHtmlLome = [htmlData.bbs09,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10,htmlData.bbs10]
 	
 var typeHtml = [htmlData.bbs01,htmlData.bbs02,htmlData.bbs01,htmlData.bbs03,htmlData.bbs01,htmlData.bbs01,htmlData.bbs03,htmlData.bbs03,htmlData.bbs04,htmlData.bbs04,htmlData.bbs02,htmlData.bbs05,htmlData.bbs06,htmlData.bbs02,htmlData.bbs07,htmlData.bbs04,htmlData.bbs08,htmlData.bbs02,htmlData.bbs02,htmlData.bbs01,htmlData.bbs02,htmlData.bbs02,htmlData.bbs06,htmlData.bbs03,htmlData.bbs01,htmlData.bbs02,htmlData.bbs03,htmlData.bbs01,htmlData.bbs04,htmlData.bbs03,htmlData.bbs01,htmlData.bbs04]
+
+
+
+
+
 
 //tap事件
 function GetQueryString(name)
@@ -141,7 +146,7 @@ function dragThumb(cs_src, cs_divdom) { //cs_src图片的节点,框型（固定d
 	 imgHeight = parseFloat(cs_src.height());//原图高
 	 boxWidth = parseFloat(cs_divdom.width());//框宽
 	 boxHeight = parseFloat(cs_divdom.height());//框高
-	
+	console.log('11')
 	//原图和框的比例（宽）
 	var oProportionWidth = boxWidth/imgWidth;
 	//原图和框的比例（高）
@@ -165,8 +170,8 @@ function dragThumb(cs_src, cs_divdom) { //cs_src图片的节点,框型（固定d
 	}
 	//位移的距离盒子-图片缩小比例/2
 	var dx = (boxWidth-imgWidth)/2;
-		var dy = (boxHeight-imgHeight)/2;	
-		//渲染定位
+	var dy = (boxHeight-imgHeight)/2;	
+	//渲染定位
 	cs_src.css({
 		width:imgWidth+'px',
 		height:imgHeight+'px',
@@ -174,3 +179,30 @@ function dragThumb(cs_src, cs_divdom) { //cs_src图片的节点,框型（固定d
 		top:dy+'px'
 		})
 } 
+
+
+//换取宝宝书皮的js
+function checkColor(shupi,dom1,dom2,dom3){
+	switch(shupi){
+			case "健康绿":
+				dom1.addClass('fmLv');
+				dom2.addClass('fdLv');
+				dom3.addClass('feLv');
+			break;
+			case "智慧蓝":
+				dom1.addClass('fmLs');
+				dom2.addClass('fdLs');
+				dom3.addClass('feLs');
+			break;
+			case "活力橙":
+				dom1.addClass('fmCs');
+				dom2.addClass('fdCs');
+				dom3.addClass('feCs');
+			break;
+			case "欢乐红":
+				dom1.addClass('fmFs');
+				dom2.addClass('fdFs');
+				dom3.addClass('feFs');	
+			break;				
+		}
+}

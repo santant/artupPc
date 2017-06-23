@@ -1,3 +1,5 @@
+
+@staticServer:"http://image2.artup.com/";
 //公共的
 body,html{
     width: 100%;
@@ -33,8 +35,6 @@ a {text-decoration: none;}
 }
 //公共的css
 body .mint-header{
-    height: 1.8rem;
-    overflow: hidden;
     background: #333;
 }
 //绝对剧中
@@ -94,8 +94,7 @@ body .mint-header{
 #cart{
     background: #f3f3f3;
     height: 100%;
-    .cartList{
-         
+    .cartList{         
         >li{
            height: 5.65625rem; 
            margin-bottom: 0.25rem;
@@ -394,9 +393,15 @@ body .mint-header{
 
 // 宝宝书
 #bbsImg{
+    .mint-header{
+        position: fixed;
+        top: 0;left: 0;
+        width: 100%;
+        z-index: 9;
+    }
     .listBox{
       width: 19rem;
-      margin: 0 auto;
+      margin: 40px auto 0;
       height: 100%;
     }
     .listBox ul {
@@ -469,6 +474,7 @@ body .mint-header{
       height: 100%;
       position: relative;
       display: none;
+      overflow: hidden;
     }
     .listBox ul li .bs .bstp .imgBox .bbsClass .myImgBox span{
       width: 3.0625rem;
@@ -485,17 +491,9 @@ body .mint-header{
       bottom: 0;
       margin: auto auto;
       font-weight: 600;
-//    display: none;
     }
     .listBox ul li .bs .bstp .imgBox .bbsClass .myImgBox >img{
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto auto;
-          max-height: 100%;
-          max-width: 100%;
+          position: absolute;        
     }
     
 
@@ -629,7 +627,7 @@ body .mint-header{
     // 封面
     .fmPage{
       border: 1px solid #ddd;
-        background: green;
+//      background: green;
         width: 8.21875rem;
         height: 11.75rem;
         position: absolute;
@@ -638,10 +636,63 @@ body .mint-header{
         bottom: 0;
         top: 0;
         margin: auto auto;
+        
+    }
+    /*绿色的封面扉页封底*/
+    .fmLv{
+        background: url("@{staticServer}resources/static/img/xsg_lvsfm.jpg");
+        background-size: 100% 100%;
+    }
+    .fdLv{
+        background: url("@{staticServer}resources/static/img/xsg_lvsfd.jpg");
+         background-size: 100% 100%;
+    }
+    .feLv{
+        background: #283e6f;
+    }
+    .fmFont{
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 0.6rem;
+    }
+    /*橙色的封面扉页封底*/
+    .fmCs{
+        background: url("@{staticServer}resources/static/img/xsg_csfm.jpg");
+         background-size: 100% 100%;
+    }
+    .fdCs{
+        background: url("@{staticServer}resources/static/img/xsg_csfd.jpg");
+         background-size: 100% 100%;
+    }
+    .feCs{
+        background: #c52d6b;
+    }
+    /*粉色的封面扉页封底*/
+    .fmFs{
+        background: url("@{staticServer}resources/static/img/xsg_fsfm.jpg");
+         background-size: 100% 100%;
+    }
+    .fdFs{
+        background: url("@{staticServer}resources/static/img/xsg_fsfd.jpg");
+         background-size: 100% 100%;
+    }
+    .feFs{
+        background: #eb6621;
+    }
+    /*蓝色的封面扉页封底*/
+    .fmLs{
+        background: url("@{staticServer}resources/static/img/xsg_lsfm.jpg");
+         background-size: 100% 100%;
+    }
+    .fdLs{
+        background: url("@{staticServer}resources/static/img/xsg_lsfd.jpg");
+        background-size: 100% 100%;
+    }
+    .feLs{
+        background: #107669;
     }
     .fePage{
       border: 1px solid #ddd;
-        background: blue;
         width: 8.21875rem;
         height: 11.75rem;
         position: absolute;
@@ -685,7 +736,6 @@ body .mint-header{
       left:0;
       bottom:0
     }
-
     .img_div{
       width:20rem;
       height:24rem;
@@ -793,6 +843,47 @@ body .mint-header{
         }
     } 
     
+    
+    //文字弹出框
+    .textareaText{
+        width: 17rem;
+        height: 12rem;
+        background: #fff;
+        box-shadow: 3px 3px 5px  #272728;
+        >p{
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 2rem;
+            color: #333;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        >textarea{
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+            width: 90%;
+            border: none;
+            height: 6rem;
+            margin: 0 auto;display: block;
+        }
+        >ol{
+            display: flex;
+            padding-top: 1.1rem;
+            >li{
+                flex: 1;
+                >span{
+                    line-height:1.3rem;
+                    width: 4rem;
+                    margin: 0 auto;
+                    display: block;
+                    font-size: 0.7rem;color: #333;
+                    text-align: center;
+                    padding: 0.2rem 0.2rem;
+                    border: 1px solid #333;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
 }
 
 //切换板式

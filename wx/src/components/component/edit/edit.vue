@@ -28,84 +28,83 @@
 		methods: {},
 		mounted() {
 			console.log(document)
-			console.log($)
+			console.log(this.$store.state.mutations)
+			console.log(localStorage.getItem("editImg"))			
+				var rotationalp = 90;
+				var reg = 0;
+				var angu = 0;
+				//生成pdf时，需要post的数据
+				var postData = {};
+				var extraPostData = {"size" : "500*500", "type":"kuanghua"};
+				
+				$(function(){
+					
+					//图片裁切
+					$('#image-cropper').cropit({
+						freeMove : false,
+						exportZoom : 1,
+						imageBackground : true,
+						imageBackgroundBorderWidth : 0,
+						imageState : {
+			//				src : '${ctx}/upload/bees-1.png',
+							src : '../../../src/assets/img/bbs.png'
+						}
+					});
+					
+					//顺时针旋转图片		 
+					$('.rotate-cw').click(function() {
+						angu = reg += rotationalp;
+						if (angu == 360) {
+							angu = 0;
+							reg = 0;
+						}
+						$('#image-cropper').cropit('rotateCW');
 			
-			var rotationalp = 90;
-	var reg = 0;
-	var angu = 0;
-	//生成pdf时，需要post的数据
-	var postData = {};
-	var extraPostData = {"size" : "500*500", "type":"kuanghua"};
-	
-	$(function(){
-		
-		//图片裁切
-		$('#image-cropper').cropit({
-			freeMove : false,
-			exportZoom : 1,
-			imageBackground : true,
-			imageBackgroundBorderWidth : 0,
-			imageState : {
-//				src : '${ctx}/upload/bees-1.png',
-				src : '../../../src/assets/img/bbs.png'
-			}
-		});
-		
-		//顺时针旋转图片		 
-		$('.rotate-cw').click(function() {
-			angu = reg += rotationalp;
-			if (angu == 360) {
-				angu = 0;
-				reg = 0;
-			}
-			$('#image-cropper').cropit('rotateCW');
-
-		});
-
-		//逆时针旋转图片
-		$('.rotate-ccw').click(function() {
-			$('#image-cropper').cropit('rotateCCW');
-			angu = reg -= rotationalp;
-			if (angu == -360) {
-				angu = 0;
-				reg = 0;
-			}
-		});
-		
-		//获取最后结果
-		$('.export').click(function() {
+					});
 			
-			var cropitData = build();
-			for(var cpData in cropitData){//遍历json对象的每个key/value对,p为key
-				postData[cpData] = cropitData[cpData];
-			}
-			for(var extraData in extraPostData){//遍历json对象的每个key/value对,p为key
-				postData[extraData] = extraPostData[extraData];
-			}
-			
-			console.log('---------post datas --------------');
-			console.log(postData);
-			
-			/*$.ajax({
-				url : Mars.Utils.getContextPath() + '/service/pdf/creator.do?format=json',
-				dataType:'json',
-				type : "POST",
-				data: postData,
-				cache : false,
-				success:function(d){
-					alert(d.pdfFilePath);	
-					console.log(d);
-				}
-			}); */
-		}); 
-		
-		
-		
-	
-	
-	})
-			
-		}
+					//逆时针旋转图片
+					$('.rotate-ccw').click(function() {
+						$('#image-cropper').cropit('rotateCCW');
+						angu = reg -= rotationalp;
+						if (angu == -360) {
+							angu = 0;
+							reg = 0;
+						}
+					});
+					
+					//获取最后结果
+					$('.export').click(function() {			
+						var cropitData = build();
+						for(var cpData in cropitData){//遍历json对象的每个key/value对,p为key
+							postData[cpData] = cropitData[cpData];
+						}
+						for(var extraData in extraPostData){//遍历json对象的每个key/value对,p为key
+							postData[extraData] = extraPostData[extraData];
+						}
+						
+						console.log('---------post datas --------------');
+						console.log(postData);
+						
+						/*$.ajax({
+							url : Mars.Utils.getContextPath() + '/service/pdf/creator.do?format=json',
+							dataType:'json',
+							type : "POST",
+							data: postData,
+							cache : false,
+							success:function(d){
+								alert(d.pdfFilePath);	
+								console.log(d);
+							}
+						}); */
+					}); 
+					
+					
+					
+				
+				
+				})
+						
+					}
     }
 </script>
 
