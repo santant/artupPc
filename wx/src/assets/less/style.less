@@ -1,0 +1,927 @@
+
+@staticServer:"http://image2.artup.com/";
+//公共的
+body,html{
+    width: 100%;
+    height: 100%;
+}
+h1, h2 {
+  font-weight: normal;
+}
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a {text-decoration: none;}
+#app {
+     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;                
+}   
+/*切换路由的动画*/
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .3s ease;
+}
+
+/*.fade-enter,*/
+.fade-leave-active {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.fade-enter{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
+//公共的css
+body .mint-header{
+    background: #333;
+}
+//绝对剧中
+.positionBs{
+    position: absolute;left: 0;right: 0;bottom: 0;top: 0;margin: auto auto;
+}
+
+
+//user 用户列表
+#user{
+    background: url(../img/user.jpg) no-repeat #2a2a2a 0 1.75rem;
+    background-size: 100%;
+    height: 100%;
+    
+    .telePhone{
+        height: 4.78125rem;
+        line-height: 4.78125rem;
+        font-size: 0.78125rem;
+        color: #fff;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        display: block;
+    }
+    .userList{
+        width: 100%;
+        overflow: hidden;
+        padding-top: 3.26rem;
+        >li{
+//          flex: 1;
+            width: 50%;
+            height: 7.225rem;
+            float: left;
+            
+            >a{
+                color: #fff;
+            }
+            i{
+                display: block;
+                height: 2.71875rem;
+                text-align: center;
+                color: #fff;
+                font-size: 1.71875rem;
+                line-height: 1.71817rem;
+                margin-top: 1.15rem;
+            }
+            p{
+                font-size: 0.78125rem;
+                color: #fff;
+                line-height: 1.875rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+//cart 购物车
+#cart{
+    background: #f3f3f3;
+    height: 100%;
+    .cartList{         
+        >li{
+           height: 5.65625rem; 
+           margin-bottom: 0.25rem;
+           overflow: hidden;background: #fff;
+           >div{float: left;}
+           .div_select{
+               width:2.3125rem;
+               height: 100%;
+               position: relative;
+               >b{
+                   .positionBs;
+                   width: 0.875rem;
+                   height: 0.875rem;
+                   display: block;
+                   border: 1px solid  #999;
+                   border-radius: 50%;
+                   
+                   >i{
+                       width: 0.875rem;
+                        height: 0.875rem; 
+                        color: #fff;
+                        font-size:0.75rem;
+                        text-indent: 0.05rem;  
+                        position: absolute;
+                        left: 0;top: 0;border-radius: 50%;
+                   }
+               }
+               .activeSelect{
+                   width: 0.875rem;
+                   height: 0.875rem;
+                   background:  #4ecd34;
+                   border: 1px solid  #4ecd34;
+               }
+           }
+           .div_comenter{
+               width: 12.875rem;
+               height: 100%;
+               .img_cart{
+                   width: 4.25rem;
+                   height: 4.25rem;
+                   border: 1px solid #e4e4e4;
+                   border-radius: 5px;
+                   margin-top: 0.625rem;
+                   position: relative;
+                   float: left;
+                   >img{
+                       .positionBs;
+                       max-width: 100%;
+                       max-height: 100%;
+                   }
+               }
+               .img_msg{
+                   width: 7.75rem;
+                   height: 100%;
+                   float: right;
+                   
+                   >li{
+                       font-size: 0.6875rem;
+                       line-height: 1.075rem;
+                   }
+                   >li:nth-child(1){  line-height: 1.375rem;padding-top: 0.5rem;}
+                   >li:nth-child(2){}
+                   >li:nth-child(3){color: #999999;font-size: 0.5625rem;}
+                   >li:nth-child(4){color: #f84845;font-size: 0.75rem;}
+               }
+           }
+           .div_number{
+               width: 4.0625rem;
+               height: 100%;  
+               
+               >ol{
+                   border: 1px solid #e4e4e4;
+                   box-sizing: border-box;
+                   border-radius: 4px;
+                   overflow: hidden;
+                   margin-top: 3.5875rem;
+                   >li{
+                       width: 1.25rem;
+                       height: 1.25rem;
+                       float: left;
+                       text-align: center;
+                       font-size: 0.625rem;
+                       line-height: 1.25rem;
+                   }
+                   >li:nth-of-type(2){
+                        border-left: 1px solid #e4e4e4;
+                        border-right: 1px solid #e4e4e4;
+                   }
+               }           
+           }
+        }
+        
+    }
+    
+    //购物车底部
+    .cart_btn{
+        width: 100%;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        position: fixed;
+        bottom: 0;left: 0;
+        font-size: 0.71875rem;
+        background: #000;
+        overflow: hidden;
+        
+        >div{
+            float: left;
+        }
+        //全选
+        .all_select{
+            width: 4.0625rem;
+            position: relative;    
+
+             >b{
+               .positionBs;
+               width: 0.875rem;
+               height: 0.875rem;
+               display: block;
+               border: 1px solid  #999;
+               border-radius: 50%;
+               left: -1.2rem;
+               >i{
+                   width: 0.875rem;
+                    height: 0.875rem; 
+                    color: #fff;
+                    font-size:0.75rem;
+                    text-indent: 0.05rem;  
+                    position: absolute;
+                    left: 0;top: 0;border-radius: 50%;
+               }
+           }
+           >span{
+               position: relative;
+               left: 2.3rem;
+                color: #fff;
+                top: 0.1rem;
+           }
+           .activeSelect{
+               width: 0.875rem;
+               height: 0.875rem;
+               background:  #4ecd34;
+               border: 1px solid  #4ecd34;
+           }
+        }
+        //价格
+        .price{
+            width: 5.5625rem;
+            height: 100%;
+            float: left;
+            padding-left: 4.4375rem;
+            color: #fff;     
+            >span{
+                color: #f84845;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                padding-left: 0.2rem;
+                >b{
+                    font-weight: 400;
+                    font-size: 0.6rem;
+                    padding-right: 0.1rem;
+                }
+            }
+        }
+        //结算
+        .crectOrder{
+            width: 4.4375rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            border:2px solid #fff;
+            float: left;
+            box-sizing: border-box;
+            font-size: 0.71875rem;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            text-align: center;
+            margin-top: 0.5175rem;
+            margin-left: 0.45rem;
+        }
+    } 
+}
+
+//bbs-select 宝宝书选择
+#bbs-select{
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    .bbsImg{
+        width: 100%;
+        position: relative;
+        height: 19.9375rem;
+        >img{
+            max-height: 100%;
+            max-width: 100%;
+            .positionBs;
+        }
+    }
+    
+    //选择
+    .slect_dl{
+        padding: 0 1.25rem;
+        height: 4.1875rem;
+        border: 1px solid #f5f5f5;
+        background: #fff;
+        >dt{
+            line-height: 2.23125rem;
+            height: 2.03125rem;
+            font-size: 0.6875rem;
+            color: #666;            
+        }
+        >dd{
+                width: 100%;
+                height: 100%;
+                .dd_slect{
+                    width: 4rem;
+                    height: 1.3125rem;
+                    line-height: 1.3125rem;
+                    margin-right:0.463rem;
+                    border: 1px solid #ededed;
+                    box-sizing: border-box;float: left;
+                    margin-bottom: 0.3rem;
+                    overflow: hidden;
+                    position: relative;
+                    font-size: 0.625rem;
+                    text-align: center;
+                    >b{
+                        display: inline-block;
+                        width: 0.4375rem;
+                        height: 0.4375rem;
+                        border: 1px solid #efefef;
+                        margin-right: 0.2rem;
+                        background: #4170e9;
+                    }
+                }
+                 .dd_slectWidth{width: 5.6875rem !important;}
+                 .dd_slect:nth-of-type(4n+4){
+                     margin-right: 0;
+                 }
+                 .dd_active{
+                      border: 1px solid #5c5c5c !important;
+                 }
+            }
+    }
+    
+    
+     //选择的底部
+    .cart_btn{
+        width: 100%;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        position: fixed;
+        bottom: 0;left: 0;
+        font-size: 0.71875rem;
+        background: #000;
+        overflow: hidden;
+         padding: 0 0.6875rem;
+        >div{
+            float: left;
+        }
+        //全选
+
+        //价格
+        .price{
+            width: 5.5625rem;
+            height: 100%;
+            float: left;
+           
+            color: #fff;     
+            >span{
+                color: #f84845;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                padding-left: 0.2rem;
+                >b{
+                    font-weight: 400;
+                    font-size: 0.6rem;
+                    padding-right: 0.1rem;
+                }
+            }
+        }
+        //结算
+        .crectOrder{
+            width: 4.4375rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            box-sizing: border-box;
+            font-size: 0.71875rem;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            text-align: right;
+            margin-top: 0.5175rem;
+            float: right;
+            margin-right:  1.2rem;
+        }
+    }
+}
+
+// 宝宝书
+#bbsImg{
+    .mint-header{
+        position: fixed;
+        top: 0;left: 0;
+        width: 100%;
+        z-index: 9;
+    }
+    .listBox{
+      width: 19rem;
+      margin: 40px auto 0;
+      height: 100%;
+    }
+    .listBox ul {
+      width: 100%;
+      height: 100%;
+    }
+    .listBox ul li{
+      width: 50%;
+      float: left;
+    }
+    .listBox ul li:last-of-type{
+        margin-bottom: 2.9rem;
+    }
+    .listBox ul li .bs{
+      width: 100%;
+      height: 15rem;
+      margin-top: 1.4rem;
+    }
+    .listBox ul li .bs .bstp{
+      height: 13rem;
+      width: 100%;
+      background: url(../img/bbs_bg_left_01.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+    }
+    .listBox ul li:nth-of-type(2n) .bs .bstp{
+      height: 13rem;
+      width: 100%;
+      background: url(../img/bbs_bg_right_02.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+    }
+    .listBox ul li .bs .bstp .imgBox{
+      width: 9.0625rem;
+      height: 13rem;
+      float: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .listBox ul li:nth-of-type(2n) .bs .bstp .imgBox{
+      float: right;
+      
+    }
+
+
+    /*宝宝书的样式*/
+    .listBox ul li .bs .bstp .imgBox .bbsClass{
+      background: #b5b5b5;
+      position: relative;
+      
+    }
+    .listBox ul li .bs .bstp .imgBox .allBbsClass{
+      width: 100%;
+      height: 100%;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbsClass >img{
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto auto;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbsClass .myImgBox{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: none;
+      overflow: hidden;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbsClass .myImgBox span{
+      width: 3.0625rem;
+      height: 1.25rem;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+      line-height: 1.25rem;
+      font-size: 0.59375rem;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto auto;
+      font-weight: 600;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbsClass .myImgBox >img{
+          position: absolute;        
+    }
+    
+
+    .listBox ul li .bs .bstp .imgBox .marginAuto{
+      position: absolute;
+      left: 0;
+      margin: auto auto;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .listBox ul li .bs .bstp .imgBox  .textarea{
+      width: 7.34375rem;
+      height: 0.2875rem;
+      border: 1px solid #d8d8d8;
+      font-size: 0.3875rem;
+      margin-left: 0.46875rem;
+      position: absolute;
+      bottom: 0.2rem;
+      line-height: 0.3875rem;
+      overflow:hidden;
+    }
+    .listBox ul li .bs .bstp .imgBox  .textarea >p{
+      font-size:0.4rem; width: 7.34375rem;
+      height: 0.3875rem;
+      // transform: scale(0.4);
+      text-align:left;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs01{
+      width: 8.21875rem;
+      height: 7rem; 
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs02{
+      width: 7.6875rem;
+      height: 9.9375rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs03{
+      width: 8.21875rem;
+      height: 11.75rem;
+      
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs04{
+      width: 8.28125rem;
+      height: 5.3125rem;
+      
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs05{
+      width: 8.1875rem;
+      height: 5.5rem;
+      margin: 0 auto;
+      margin-top: 0.375rem;
+      
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs05:nth-child(2){
+      margin-top: 1.03125rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs06{
+      width: 3.75rem;
+      height: 6.25rem;
+      float: left;
+      margin-top: 3.375rem;
+      margin-left: 0.375rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs06:nth-child(2){
+      margin-left: 0.8125rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs07{
+      width:3.90625rem;
+      height: 5.6875rem;
+      float: left;
+      margin-top: 0.4625rem;
+      margin-left: 0.375rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs07:nth-of-type(2n){
+      margin-left: 0.375rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs08{
+      width:3.75rem;
+      height: 3.75rem;
+      float: left;
+      margin-top: 0.4625rem;
+      margin-left: 0.375rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs08:nth-child(1){
+      margin-top: 2.3125rem;
+    }
+    .listBox ul li .bs .bstp .imgBox .bbs08:nth-child(2){
+      margin-top: 2.3125rem;
+    }
+    .listBox ul li .bs .bstp .bsRight{
+      float: right;
+    }
+    .listBox ul li .bbsBtn{
+       width: 90%;
+      height: 2rem;
+        height: 2rem;
+        float: left;
+    }
+    .listBox ul li:nth-of-type(2n) .bbsBtn{
+       width: 90%;
+      height: 2rem;
+        height: 2rem;
+        float: right;
+    }
+    .listBox .bbsBtn ul{
+      height: 100%;
+    }
+    .listBox .bbsBtn ul li{
+      width: 50%;
+      height: 100%;
+      float: left;
+      font-size: 0.625rem;
+      
+    }
+    .listBox .bbsBtn ul li p{
+      line-height: 2rem;
+    }
+    .listBox .bbsBtn ul li a{
+      width: 3.8125rem;
+      height: 1.375rem;
+      border: 1px solid #666;
+      display: block;
+        line-height: 1.5rem;
+        text-align: center;
+        margin-top: 0.3rem;
+        float: right;
+    }
+
+
+    // 封面
+    .fmPage{
+      border: 1px solid #ddd;
+//      background: green;
+        width: 8.21875rem;
+        height: 11.75rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto auto;
+        
+    }
+    /*绿色的封面扉页封底*/
+    .fmLv{
+        background: url("@{staticServer}resources/static/img/xsg_lvsfm.jpg");
+        background-size: 100% 100%;
+    }
+    .fdLv{
+        background: url("@{staticServer}resources/static/img/xsg_lvsfd.jpg");
+         background-size: 100% 100%;
+    }
+    .feLv{
+        background: #283e6f;
+    }
+    .fmFont{
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 0.6rem;
+    }
+    /*橙色的封面扉页封底*/
+    .fmCs{
+        background: url("@{staticServer}resources/static/img/xsg_csfm.jpg");
+         background-size: 100% 100%;
+    }
+    .fdCs{
+        background: url("@{staticServer}resources/static/img/xsg_csfd.jpg");
+         background-size: 100% 100%;
+    }
+    .feCs{
+        background: #c52d6b;
+    }
+    /*粉色的封面扉页封底*/
+    .fmFs{
+        background: url("@{staticServer}resources/static/img/xsg_fsfm.jpg");
+         background-size: 100% 100%;
+    }
+    .fdFs{
+        background: url("@{staticServer}resources/static/img/xsg_fsfd.jpg");
+         background-size: 100% 100%;
+    }
+    .feFs{
+        background: #eb6621;
+    }
+    /*蓝色的封面扉页封底*/
+    .fmLs{
+        background: url("@{staticServer}resources/static/img/xsg_lsfm.jpg");
+         background-size: 100% 100%;
+    }
+    .fdLs{
+        background: url("@{staticServer}resources/static/img/xsg_lsfd.jpg");
+        background-size: 100% 100%;
+    }
+    .feLs{
+        background: #107669;
+    }
+    .fePage{
+      border: 1px solid #ddd;
+        width: 8.21875rem;
+        height: 11.75rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto auto;
+    }
+    .fmFont{
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+    }
+
+    .listBox ul li:nth-child(1) .bs .bstp{
+      background: none ;
+      border: 1px solid #ddd;
+    }
+    .listBox ul li:nth-child(2) .bs .bstp{
+      background: none ;
+      border: 1px solid #ddd;
+    }
+    .listBox ul li:nth-child(3) .bs .bstp{
+      background: none ;
+      border: 1px solid #ddd;
+    }
+    .listBox ul li:nth-child(4) .bs .bstp{
+      background: none ;
+      border: 1px solid #ddd;
+    }
+    .listBox ul li:nth-last-child(1) .bs .bstp{
+      background: none ;
+      border: 1px solid #ddd;
+    }
+
+    .sucai_box2{
+          width:20rem;
+      height:400px;
+      position:absolute;
+      left:0;
+      bottom:0
+    }
+    .img_div{
+      width:20rem;
+      height:24rem;
+      position:relative;
+      background:#fff;
+      ul{width: 15.78125rem;height: 19.15625rem;overflow-y: auto;margin: 1.125rem auto 0;
+
+        li{width: 6.03125rem;height: 3.75rem;float: left;border: 2px solid #fff;margin-bottom: 0.625rem;position: relative;
+
+            >img{width: 100%;height: 100%;}
+        }
+       li:nth-of-type(2n+2){float: right;}
+       li:first-of-type{position: relative;border: 1px solid #eaeaea;}
+      }
+    }
+  .btn_button{
+    width: 100%;
+    height: 4.84375rem;
+    border-top: 1px solid #ccc;
+    box-shadow: -1px -1px  3px #D5D8DF;
+
+    .Determine{
+      width: 7.1875rem;
+      height: 1.8125rem;
+      line-height: 1.8125rem;
+      border: 1px solid #2a2a2a;
+      display: block;
+      text-align: center;
+      font-size: 0.625rem;
+      color: #1f1d1b;
+      margin: 1.375rem auto;
+    }
+  }
+
+  // 选择上传方式
+  .fileUpload{
+    width:100%;
+    height:auto;
+    ul{
+      // padding:0.5rem 0;
+      >li{
+          width: 100%;
+          height: 45px;
+          line-height: 45px;
+          font-size: 18px;
+          color: #333;
+          text-align:center;
+          background:#fff;
+          border-top:1px solid #e0e0e0;
+      }
+      >li:last-child{
+        border-top:6px solid #e0e0e0;
+      }
+    }
+  }
+    
+     //选择的底部
+    .cart_btn{
+        width: 100%;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        position: fixed;
+        bottom: 0;left: 0;
+        font-size: 0.71875rem;
+        background: #000;
+        overflow: hidden;
+         padding: 0 0.6875rem;
+        >div{
+            float: left;
+        }
+        //全选
+
+        //价格
+        .price{
+            width: 5.5625rem;
+            height: 100%;
+            float: left;
+           
+            color: #fff;     
+            >span{
+                color: #f84845;
+                font-size: 0.8rem;
+                letter-spacing: 0.1rem;
+                padding-left: 0.2rem;
+                >b{
+                    font-weight: 400;
+                    font-size: 0.6rem;
+                    padding-right: 0.1rem;
+                }
+            }
+        }
+        //结算
+        .crectOrder{
+            width: 4.4375rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            box-sizing: border-box;
+            font-size: 0.71875rem;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            text-align: right;
+            margin-top: 0.5175rem;
+            float: right;
+            margin-right:  1.2rem;
+        }
+    } 
+    
+    
+    //文字弹出框
+    .textareaText{
+        width: 17rem;
+        height: 12rem;
+        background: #fff;
+        box-shadow: 3px 3px 5px  #272728;
+        >p{
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 2rem;
+            color: #333;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        >textarea{
+            font-size: 0.7rem;
+            line-height: 1.3rem;
+            width: 90%;
+            border: none;
+            height: 6rem;
+            margin: 0 auto;display: block;
+        }
+        >ol{
+            display: flex;
+            padding-top: 1.1rem;
+            >li{
+                flex: 1;
+                >span{
+                    line-height:1.3rem;
+                    width: 4rem;
+                    margin: 0 auto;
+                    display: block;
+                    font-size: 0.7rem;color: #333;
+                    text-align: center;
+                    padding: 0.2rem 0.2rem;
+                    border: 1px solid #333;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+//切换板式
+.box_checkBS{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+    top: 0;left: 0; 
+   .checkBS{
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background: #ccc;
+
+//      top: 0;left: 0;
+        >li{
+            width: 50%;
+            margin: 1rem auto;
+            border: 1px solid #fff;
+            
+            >img{
+                width: 100%;
+                display: block;
+            }
+        }
+//      >li:nth-of-type(1){
+//           border: 1px solid #333;
+//      }
+        .liactive{
+                border: 1px solid #333;
+        }
+}
+ 
+ 
+ 
+ 
+}
+
+
