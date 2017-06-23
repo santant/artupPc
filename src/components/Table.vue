@@ -81,19 +81,17 @@
 		<div class="el-table el-table--fit el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">		
 			 <el-table
 			    :data="tableData"
-			    border
-			    style="width: 100%">
-			    <el-table-column
-			       fixed
-			      type="index"
-			      label=" "
-			      width="40">
+			    border	
+			    @select="changed"
+			    style="width: 100%"
+			    >
+			    <el-table-column fixed type="index" label=" "  width="40">
 			    </el-table-column>
 			    <el-table-column
 			       fixed
 			     type="selection"
 			      label=" "
-			      width="40">
+			      width="40" >
 			    </el-table-column>
 			    <el-table-column
 			      fixed
@@ -155,13 +153,13 @@
 			        <el-button type="text" size="small">物流详情</el-button>
 			        <el-button type="text" size="small">详情</el-button>
 			        <el-button type="text" size="small">取消</el-button>
-			        <el-button type="text" size="small">删除</el-button>
+			        <el-button type="text" @click="delect(scope.$index)" size="small">删除</el-button>
 			      </template>
 			    </el-table-column>
 			</el-table>
 			
 			<div class="toolbar el-col el-col-24">
-				<button disabled="disabled" type="button" class="el-button el-button--danger is-disabled"><span>批量删除</span></button>
+				<button disabled="disabled" type="button" :class="datas"><span>批量删除</span></button>
 				<!--页码-->
 				<div class="el-pagination" style="float: right;">
 					<div class="block">
@@ -181,6 +179,11 @@
 		 export default {
 		    data() {
 			 return {
+			 	 selects:'',
+			 	 datas:{
+			 	 	"el-button el-button--danger is-disabled" : true,
+			 	 	"el-button el-button--danger" : false
+			 	 },
 		        formInline: {
 		          user: '',
 		          region: '',
@@ -190,7 +193,7 @@
 		          phoneNumber:'',
 		          date1:'',
 		          date2:'',
-		          order:''
+		          order:'',
 		        },
 		        tableData: [{
 		          id: '201620',
@@ -247,7 +250,27 @@
 		    methods: {
 		      onSubmit() {
 		        console.log('submit!');
+		      },
+		      test(row,column,cell,event){
+
+		      },
+		      changed(selection,row){
+		      	this.selects = selection;
+		      	console.log(this.selects )
+
+		      },
+		      delect(index){
+			      if(this.selects == '' || this.selects == "" ){
+			      	alert('请选择删除项')
+			      }else{
+			      		this.tableData.splice(index,1);
+			      		
+			      		
+			      }
+		      
+		     	//this.items = this.items.filter(t => !this.selection.some(s => s.id === t.id))
 		      }
+		   
 		    }
 		  }
 	
